@@ -1,15 +1,17 @@
 pipeline {
     agent any
+     tools { 
+        maven 'Maven 3.3.9' 
+        jdk 'jdk8' 
+    }
     stages {
         
        stage('Compile Stage') {
                          steps{
   							withMaven(maven : 'maven_3_3_9')
                           {
-    						sh 'mvn clean compile'
-                             
-
-                         }
+    						sh 'mvn clean compile'   
+    						  }
  
                         
 }
